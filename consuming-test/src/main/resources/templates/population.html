@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <title>Age population</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Anys</th>
+            <th>Codis</th>
+            <th>Literals</th>
+            <th>Homes de 0 a 14 anys</th>
+            <th>Homes de 15 a 64 anys</th>
+            <th>Homes de 65 anys i més</th>
+            <th>Dones de 0 a 14 anys</th>
+            <th>Dones de 15 a 64 anys</th>
+            <th>Dones de 65 anys i més</th>
+            <th>Total de 0 a 14 anys</th>
+            <th>Total de 15 a 64 anys</th>
+            <th>Total de 65 anys i més</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="instalacio : ${instalacionsDades}">
+            <td th:text="${instalacio.anys}"></td>
+            <td th:text="${instalacio.camps_poliesportius}"></td>
+            <td th:text="${instalacio.espais_d_atletisme}"></td>
+            <td th:text="${instalacio.homes_de_0_a_14_anys}"></td>
+            <td th:text="${instalacio.homes_de_15_a_64_anys}"></td>
+            <td th:text="${instalacio.homes_de_65_anys_i_m_s}"></td>
+            <td th:text="${instalacio.dones_de_0_a_14_anys}"></td>
+            <td th:text="${instalacio.dones_de_15_a_64_anys}"></td>
+            <td th:text="${instalacio.dones_de_65_anys_i_m_s}"></td>
+            <td th:text="${instalacio.total_de_0_a_14_anys}"></td>
+            <td th:text="${instalacio.total_de_15_a_64_anys}"></td>
+            <td th:text="${instalacio.total_de_65_anys_i_m_s}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
